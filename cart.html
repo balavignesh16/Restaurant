@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart - Saffron South</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100">
+  <!-- Header -->
+  <header class="fixed top-0 w-full bg-white shadow-md z-50">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <img src="./assest/logo.png" alt="Saffron South Logo" class="h-12">
+      <nav class="hidden md:flex space-x-6">
+        <a href="index.html" class="text-gray-700 hover:text-orange-600">Home</a>
+        <a href="menu.html" class="text-gray-700 hover:text-orange-600">Menu</a>
+        <a href="locations.html" class="text-gray-700 hover:text-orange-600">Locations</a>
+        <a href="about.html" class="text-gray-700 hover:text-orange-600">About Us</a>
+        <a href="offers.html" class="text-gray-700 hover:text-orange-600">Offers</a>
+        <a href="testimonials.html" class="text-gray-700 hover:text-orange-600">Testimonials</a>
+        <a href="gallery.html" class="text-gray-700 hover:text-orange-600">Gallery</a>
+        <a href="contact.html" class="text-gray-700 hover:text-orange-600">Contact</a>
+      </nav>
+      <div class="flex items-center space-x-4">
+        <div class="relative cart-icon-container">
+          <a href="cart.html" class="text-gray-700 hover:text-orange-600">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+            <span id="cart-count" class="text-sm bg-orange-600 text-white rounded-full px-2 py-1">0</span>
+          </a>
+          <div id="mini-cart">
+            <h3 class="text-lg font-semibold text-gray-800 font-playfair">Cart</h3>
+            <div id="mini-cart-items" class="text-gray-600 font-roboto">Your cart is empty.</div>
+          </div>
+        </div>
+        <a href="menu.html#order" class="cta-button text-white px-6 py-2 rounded-full">Order Now</a>
+        <button id="mobile-menu-btn" class="md:hidden focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+      <a href="index.html" class="block px-4 py-2 text-gray-700 hover:bg-orange-100">Home</a>
+      <a href="menu.html" class="block px-4 py-2 text-gray-700 hover:bg-orange-100">Menu</a>
+      <a href="locations.html" class="block px-4 py-2 text-gray-700 hover:bg-orange-100">Locations</a>
+      <a href="about.html" class="block px-4 py-2 text-gray-700 hover:bg-orange-100">About Us</a>
+      <a href="offers.html" class="block px-4 py-2 text-gray-700 hover:bg-orange-100">Offers</a>
+      <a href="testimonials.html" class="block px-4 py-2 text-gray-700 hover:bg-orange-100">Testimonials</a>
+      <a href="gallery.html" class="block px-4 py-2 text-gray-700 hover:bg-orange-100">Gallery</a>
+      <a href="contact.html" class="block px-4 py-2 text-gray-700 hover:bg-orange-100">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Cart Section -->
+  <section id="cart" class="section-padding bg-gray-100 pt-24">
+    <div class="container mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-6 font-playfair animate-fade-in">Your Cart</h2>
+      <div class="bg-white rounded-lg shadow-md p-6 animate-slide-up">
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Item</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th>Total</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="cart-items">
+            <tr><td colspan="6" class="text-center text-gray-600 font-roboto">Your cart is empty.</td></tr>
+          </tbody>
+        </table>
+        <div class="text-right mt-4">
+          <h3 class="text-xl font-semibold text-gray-800 font-playfair">Total: <span id="cart-total">$0.00</span></h3>
+        </div>
+      </div>
+      <div class="bg-white rounded-lg shadow-md p-6 mt-8 animate-slide-up">
+        <h3 class="text-xl font-semibold text-gray-800 mb-4 font-playfair">Delivery Details</h3>
+        <form id="delivery-form" class="delivery-form">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label for="delivery-name" class="block text-gray-700 font-roboto">Full Name</label>
+              <input type="text" id="delivery-name" placeholder="Your Name" required>
+            </div>
+            <div>
+              <label for="delivery-email" class="block text-gray-700 font-roboto">Email</label>
+              <input type="email" id="delivery-email" placeholder="Your Email" required>
+            </div>
+            <div>
+              <label for="delivery-phone" class="block text-gray-700 font-roboto">Phone Number</label>
+              <input type="tel" id="delivery-phone" placeholder="Your Phone Number" required>
+            </div>
+            <div>
+              <label for="delivery-address" class="block text-gray-700 font-roboto">Delivery Address</label>
+              <input type="text" id="delivery-address" placeholder="Your Address" required>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-4 font-playfair">Payment Options</h3>
+          <div class="payment-option">
+            <input type="radio" name="payment" value="Credit Card" id="payment-card" required>
+            <label for="payment-card" class="font-roboto">Credit Card</label>
+          </div>
+          <div class="payment-option">
+            <input type="radio" name="payment" value="UPI" id="payment-upi">
+            <label for="payment-upi" class="font-roboto">UPI</label>
+          </div>
+          <div class="payment-option">
+            <input type="radio" name="payment" value="Cash on Delivery" id="payment-cod">
+            <label for="payment-cod" class="font-roboto">Cash on Delivery</label>
+          </div>
+          <button type="submit" class="cta-button text-white px-6 py-3 rounded-full mt-6">Order Now</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+      <div>
+        <h3 class="text-xl font-bold mb-4 font-playfair">Quick Links</h3>
+        <ul class="space-y-2 font-roboto">
+          <li><a href="index.html" class="hover:text-orange-400">Home</a></li>
+          <li><a href="menu.html" class="hover:text-orange-400">Menu</a></li>
+          <li><a href="locations.html" class="hover:text-orange-400">Locations</a></li>
+          <li><a href="about.html" class="hover:text-orange-400">About Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold mb-4 font-playfair">Contact Us</h3>
+        <p class="font-roboto">Phone: (123) 456-7890</p>
+        <p class="font-roboto">Email: info@saffronsouth.com</p>
+        <div class="flex justify-center md:justify-start space-x-4 mt-4">
+          <a href="#" class="hover:text-orange-400">Facebook</a>
+          <a href="#" class="hover:text-orange-400">Instagram</a>
+          <a href="#" class="hover:text-orange-400">Twitter</a>
+        </div>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold mb-4 font-playfair">Subscribe for Updates</h3>
+        <form class="flex max-w-md mx-auto md:mx-0" id="footer-subscribe-form">
+          <input type="email" placeholder="Your Email" class="w-full p-2 rounded-l-md focus:outline-none font-roboto" required>
+          <button type="submit" class="cta-button text-white px-4 py-2 rounded-r-md">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <p class="text-center mt-8 font-roboto">© 2025 Saffron South. All Rights Reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
