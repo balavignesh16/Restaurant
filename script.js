@@ -72,7 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCartCount();
   };
 
-  // Custom Popup Function
   const showPopup = (title, message) => {
     const popup = document.getElementById('custom-popup');
     if (!popup) {
@@ -81,28 +80,37 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     const popupTitle = document.getElementById('popup-title');
     const popupMessage = document.getElementById('popup-message');
-
+  
     popupTitle.textContent = title;
-    popupMessage.textContent = message;
+    // Replace \n with <br> for HTML line breaks
+    popupMessage.innerHTML = message.replace(/\n/g, '<br>');
     popup.classList.add('show');
-    popup.classList.remove('hidden', 'animate-slide-up');
-    void popup.offsetWidth; // Trigger reflow
-    popup.classList.add('animate-slide-up');
-
+    popup.classList.remove('hidden');
+  
+    // Optional: Add fade-in class if you want to reintroduce animation
+    const popupContent = popup.querySelector('.bg-white');
+    popupContent.style.opacity = '0';
+    requestAnimationFrame(() => {
+      popupContent.style.transition = 'opacity 0.3s ease-out';
+      popupContent.style.opacity = '1';
+    });
+  
     setTimeout(() => {
-      popup.classList.remove('show', 'animate-slide-up');
+      popup.classList.remove('show');
       popup.classList.add('hidden');
+      popupContent.style.opacity = '0';
     }, 3000);
   };
-
+  
   const closePopup = () => {
     const popup = document.getElementById('custom-popup');
     if (popup) {
-      popup.classList.remove('show', 'animate-slide-up');
+      popup.classList.remove('show');
       popup.classList.add('hidden');
+      const popupContent = popup.querySelector('.bg-white');
+      popupContent.style.opacity = '0';
     }
   };
-
   document.getElementById('close-popup')?.addEventListener('click', closePopup);
 
   // Add to cart
