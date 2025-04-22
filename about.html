@@ -10,32 +10,32 @@
 </head>
 <body class="bg-gray-100">
   <!-- Header -->
-  <header class="fixed top-0 w-full bg-white shadow-md z-50">
+  <header class="fixed top-0 w-full bg-white shadow-md z-[100]">
     <div class="container mx-auto flex justify-between items-center p-4">
       <img src="./assest/logo.png" alt="Saffron South Logo" class="h-12">
-      <nav class="hidden md:flex space-x-6">
-        <a href="index.html" class="text-gray-700 hover:text-orange-600">Home</a>
-        <a href="menu.html" class="text-gray-700 hover:text-orange-600">Menu</a>
-        <a href="locations.html" class="text-gray-700 hover:text-orange-600">Locations</a>
-        <a href="about.html" class="text-gray-700 hover:text-orange-600">About Us</a>
-        <a href="offers.html" class="text-gray-700 hover:text-orange-600">Offers</a>
-        <a href="testimonials.html" class="text-gray-700 hover:text-orange-600">Testimonials</a>
-        <a href="gallery.html" class="text-gray-700 hover:text-orange-600">Gallery</a>
-        <a href="contact.html" class="text-gray-700 hover:text-orange-600">Contact</a>
+      <nav class="flex space-x-6 z-[101] text-gray-700"> 
+        <a href="index.html" class="hover:text-orange-600">Home</a>
+        <a href="menu.html" class="hover:text-orange-600">Menu</a>
+        <a href="locations.html" class="hover:text-orange-600">Locations</a>
+        <a href="about.html" class="hover:text-orange-600">About Us</a>
+        <a href="offers.html" class="hover:text-orange-600">Offers</a>
+        <a href="testimonials.html" class="hover:text-orange-600">Testimonials</a>
+        <a href="gallery.html" class="hover:text-orange-600">Gallery</a>
+        <a href="contact.html" class="hover:text-orange-600">Contact</a>
       </nav>
       <div class="flex items-center space-x-4">
         <div class="relative cart-icon-container flex items-center">
-            <a href="cart.html" class="text-gray-700 hover:text-orange-600 flex items-center">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-              </svg>
-              <span id="cart-count" class="text-sm bg-orange-600 text-white rounded-full px-2 py-1 ml-1">0</span>
-            </a>
-            <div id="mini-cart">
-              <h3 class="text-lg font-semibold text-gray-800 font-playfair">Cart</h3>
-              <div id="mini-cart-items" class="text-gray-600 font-roboto">Your cart is empty.</div>
-            </div>
+          <a href="cart.html" class="text-gray-700 hover:text-orange-600 flex items-center">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+            <span id="cart-count" class="text-sm bg-orange-600 text-white rounded-full px-2 py-1 ml-1">0</span>
+          </a>
+          <div id="mini-cart">
+            <h3 class="text-lg font-semibold text-gray-800 font-playfair">Cart</h3>
+            <div id="mini-cart-items" class="text-gray-600 font-roboto">Your cart is empty.</div>
           </div>
+        </div>
         <a href="menu.html#order" class="cta-button text-white px-6 py-2 rounded-full">Order Now</a>
         <button id="mobile-menu-btn" class="md:hidden focus:outline-none">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -67,24 +67,24 @@
           <a href="menu.html" class="cta-button text-white px-6 py-3 rounded-full">Explore Our Menu</a>
         </div>
         <div class="md:w-1/2">
-          <img src="https://images.unsplash.com/photo-1513104890138-7c749659a680?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="South Indian Kitchen" class="rounded-lg mx-auto max-w-full h-auto lazy" loading="lazy">
+          <img src="./assest/restaurent.jpg" alt="South Indian Kitchen" class="rounded-lg mx-auto max-w-full h-auto lazy" loading="lazy">
         </div>
       </div>
       <div class="mt-12 text-center">
         <h3 class="text-2xl font-semibold text-gray-800 mb-4 font-playfair">Meet Our Team</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div class="bg-gray-50 rounded-lg p-4 animate-slide-up">
-            <img src="https://via.placeholder.com/150x150?text=Chef+Anand" alt="Chef Anand" class="rounded-full mx-auto mb-4 lazy" loading="lazy">
+            <img src="./assest/chefs/chef1.png" alt="Chef Anand" class="rounded-full mx-auto mb-4 lazy" loading="lazy">
             <h4 class="text-lg font-semibold text-gray-800 font-playfair">Chef Anand</h4>
             <p class="text-gray-600 font-roboto">Master of South Indian spices with 20 years of experience.</p>
           </div>
           <div class="bg-gray-50 rounded-lg p-4 animate-slide-up">
-            <img src="https://via.placeholder.com/150x150?text=Manager+Priya" alt="Manager Priya" class="rounded-full mx-auto mb-4 lazy" loading="lazy">
+            <img src="./assest/chefs/chef3.png" alt="Manager Priya" class="rounded-full mx-auto mb-4 lazy" loading="lazy">
             <h4 class="text-lg font-semibold text-gray-800 font-playfair">Priya Menon</h4>
             <p class="text-gray-600 font-roboto">Ensures every guest leaves with a smile.</p>
           </div>
           <div class="bg-gray-50 rounded-lg p-4 animate-slide-up">
-            <img src="https://via.placeholder.com/150x150?text=Chef+Lakshmi" alt="Chef Lakshmi" class="rounded-full mx-auto mb-4 lazy" loading="lazy">
+            <img src="./assest/chefs/chef2.png" alt="Chef Lakshmi" class="rounded-full mx-auto mb-4 lazy" loading="lazy">
             <h4 class="text-lg font-semibold text-gray-800 font-playfair">Chef Lakshmi</h4>
             <p class="text-gray-600 font-roboto">Expert in traditional Kerala cuisine.</p>
           </div>
@@ -93,13 +93,12 @@
       <div class="mt-12 text-center">
         <h3 class="text-2xl font-semibold text-gray-800 mb-4 font-playfair">Our Kitchen in Action</h3>
         <div class="max-w-4xl mx-auto">
-          <iframe class="w-full h-64 md:h-96 rounded-lg" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Saffron South Kitchen" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe class="w-full h-64 md:h-96 rounded-lg" src="https://www.youtube.com/embed/ebtoOdddJE0?si=jdxmlN7im9cIrgW9" title="Saffron South Kitchen" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="bg-gray-800 text-white py-8">
     <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
       <div>
@@ -113,9 +112,9 @@
       </div>
       <div>
         <h3 class="text-xl font-bold mb-4 font-playfair">Contact Us</h3>
-        <p class="font-roboto">Phone: (123) 456-7890</p>
+        <p class="font-roboto">Phone: +91 1234567890</p>
         <p class="font-roboto">Email: info@saffronsouth.com</p>
-        <div class="flex justify-center md:justify-start space-x-4 mt-4">
+        <div class="flex justify-center md:text-left space-x-4 mt-4">
           <a href="#" class="hover:text-orange-400">Facebook</a>
           <a href="#" class="hover:text-orange-400">Instagram</a>
           <a href="#" class="hover:text-orange-400">Twitter</a>
@@ -124,13 +123,16 @@
       <div>
         <h3 class="text-xl font-bold mb-4 font-playfair">Subscribe for Updates</h3>
         <form class="flex max-w-md mx-auto md:mx-0" id="footer-subscribe-form">
-          <input type="email" placeholder="Your Email" class="w-full p-2 rounded-l-md focus:outline-none font-roboto" required>
-          <button type="submit" class="cta-button text-white px-4 py-2 rounded-r-md">Subscribe</button>
+          <input type="email" placeholder="Your Email" class="w-full p-2 rounded-md focus:outline-none font-roboto" required>
+          <button type="submit" class="cta-button text-white px-4 py-2 rounded-md ml-2 ">Subscribe</button>
         </form>
       </div>
     </div>
     <p class="text-center mt-8 font-roboto">© 2025 Saffron South. All Rights Reserved.</p>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script src="script.js"></script>
