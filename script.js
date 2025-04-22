@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
       miniCartItems.innerHTML = cart.map(item => `
         <div class="item">
           <span>${item.name} (x${item.quantity})</span>
-          <span>$${item.price * item.quantity}</span>
+          <span>₹${item.price * item.quantity}</span>
         </div>
       `).join('');
     }
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (cart.length === 0) {
       cartItems.innerHTML = '<tr><td colspan="6" class="text-center text-gray-600 font-roboto">Your cart is empty.</td></tr>';
-      cartTotal.textContent = '$0.00';
+      cartTotal.textContent = '₹0.00';
     } else {
       cartItems.innerHTML = cart.map((item, index) => `
         <tr>
@@ -61,13 +61,13 @@ document.addEventListener('DOMContentLoaded', () => {
           <td>
             <input type="number" min="1" value="${item.quantity}" data-index="${index}" class="quantity-input w-16 p-1">
           </td>
-          <td>$${item.price.toFixed(2)}</td>
-          <td>$${item.price * item.quantity}</td>
+          <td>₹${item.price.toFixed(2)}</td>
+          <td>₹${item.price * item.quantity}</td>
           <td><button class="remove-item text-red-500 hover:text-red-700" data-index="${index}">Remove</button></td>
         </tr>
       `).join('');
       const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-      cartTotal.textContent = `$${total.toFixed(2)}`;
+      cartTotal.textContent = `₹${total.toFixed(2)}`;
     }
     updateCartCount();
   };
