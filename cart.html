@@ -80,43 +80,48 @@
           <h3 class="text-xl font-semibold text-gray-800 font-playfair">Total: <span id="cart-total">₹0.00</span></h3>
         </div>
       </div>
-      <div class="bg-white rounded-lg shadow-md p-6 mt-8 animate-slide-up">
-        <h3 class="text-xl font-semibold text-gray-800 mb-4 font-playfair">Delivery Details</h3>
-        <form id="delivery-form" class="delivery-form">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label for="delivery-name" class="block text-gray-700 font-roboto">Full Name</label>
-              <input type="text" id="delivery-name" placeholder="Your Name" required>
-            </div>
-            <div>
-              <label for="delivery-email" class="block text-gray-700 font-roboto">Email</label>
-              <input type="email" id="delivery-email" placeholder="Your Email" required>
-            </div>
-            <div>
-              <label for="delivery-phone" class="block text-gray-700 font-roboto">Phone Number</label>
-              <input type="tel" id="delivery-phone" placeholder="Your Phone Number" required>
-            </div>
-            <div>
-              <label for="delivery-address" class="block text-gray-700 font-roboto">Delivery Address</label>
-              <input type="text" id="delivery-address" placeholder="Your Address" required>
-            </div>
-          </div>
-          <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-4 font-playfair">Payment Options</h3>
-          <div class="payment-option">
-            <input type="radio" name="payment" value="Credit Card" id="payment-card" required>
-            <label for="payment-card" class="font-roboto">Credit Card</label>
-          </div>
-          <div class="payment-option">
-            <input type="radio" name="payment" value="UPI" id="payment-upi">
-            <label for="payment-upi" class="font-roboto">UPI</label>
-          </div>
-          <div class="payment-option">
-            <input type="radio" name="payment" value="Cash on Delivery" id="payment-cod">
-            <label for="payment-cod" class="font-roboto">Cash on Delivery</label>
-          </div>
-          <button type="submit" class="cta-button text-white px-6 py-3 rounded-full mt-6">Order Now</button>
-        </form>
+      <!-- Delivery Details Section -->
+<div class="bg-white rounded-lg shadow-md p-6 mt-8 animate-slide-up w-full max-w-4xl mx-auto">
+  <h3 class="text-2xl font-bold text-gray-800 mb-6 font-playfair bg-gradient-to-r from-orange-500 to-yellow-400 text-transparent bg-clip-text">Delivery Details</h3>
+  <form id="delivery-form" class="delivery-form">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-4 bg-gradient-to-br from-yellow-50 to-orange-50 rounded-lg">
+      <div class="relative">
+        <label for="delivery-name" class="block text-gray-700 font-roboto mb-2">Full Name <span class="text-red-500">*</span></label>
+        <input type="text" id="delivery-name" placeholder="Enter your full name" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition duration-200">
       </div>
+      <div class="relative">
+        <label for="delivery-email" class="block text-gray-700 font-roboto mb-2">Email <span class="text-red-500">*</span></label>
+        <input type="email" id="delivery-email" placeholder="Enter your email" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition duration-200">
+      </div>
+      <div class="relative">
+        <label for="delivery-phone" class="block text-gray-700 font-roboto mb-2">Phone Number <span class="text-red-500">*</span></label>
+        <input type="tel" id="delivery-phone" placeholder="Enter your phone number" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition duration-200">
+      </div>
+      <div class="relative md:col-span-2">
+        <label for="delivery-address" class="block text-gray-700 font-roboto mb-2">Delivery Address <span class="text-red-500">*</span></label>
+        <input type="text" id="delivery-address" placeholder="Enter your full address" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition duration-200">
+      </div>
+    </div>
+    <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4 font-playfair bg-gradient-to-r from-orange-500 to-yellow-400 text-transparent bg-clip-text">Payment Options</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 bg-gradient-to-br from-yellow-50 to-orange-50 rounded-lg">
+      <div class="payment-option flex items-center">
+        <input type="radio" name="payment" value="Credit Card" id="payment-card" required class="h-5 w-5 text-orange-600 focus:ring-orange-500 border-gray-300">
+        <label for="payment-card" class="ml-3 block text-gray-700 font-roboto">Credit Card</label>
+      </div>
+      <div class="payment-option flex items-center">
+        <input type="radio" name="payment" value="UPI" id="payment-upi" class="h-5 w-5 text-orange-600 focus:ring-orange-500 border-gray-300">
+        <label for="payment-upi" class="ml-3 block text-gray-700 font-roboto">UPI</label>
+      </div>
+      <div class="payment-option flex items-center">
+        <input type="radio" name="payment" value="Cash on Delivery" id="payment-cod" class="h-5 w-5 text-orange-600 focus:ring-orange-500 border-gray-300">
+        <label for="payment-cod" class="ml-3 block text-gray-700 font-roboto">Cash on Delivery</label>
+      </div>
+    </div>
+    <button type="submit" class="cta-button text-white px-6 py-3 rounded-full mt-8 w-full bg-gradient-to-r from-orange-500 to-yellow-400 hover:from-orange-600 hover:to-yellow-500 transition duration-300 ease-in-out">
+      <span class="block">Order Now</span>
+    </button>
+  </form>
+</div>
     </div>
   </section>
 
